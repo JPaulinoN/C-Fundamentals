@@ -1,0 +1,31 @@
+﻿@model OdeToFood.ViewModels.HomeIndexViewModel
+@{
+    ViewBag.Title = "Home page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- <style>
+    table, td {
+        border: solid black;
+        margin: auto;
+    }
+
+    #a {
+        background-color: lightgray;
+        width: 100px;
+        padding: 5px;
+        border: 2px solid black;
+        border-radius: 25px;
+    }
+</style> -->
+<h1>All Restaurants</h1>
+@foreach (var restaurant in Model.Restaurants)
+{
+    @Html.Partial("_Summary", restaurant)
+}
+
+<div>
+    <a asp-action="Create">Add Restaurant</a>
+</div>
+
+
